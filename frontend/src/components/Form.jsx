@@ -10,19 +10,24 @@ const Form = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
+  
     try {
       console.log("Sending prompt:", prompt); // Log the prompt
+  
       const response = await axios.post(
-        "http://localhost:5000/api/generate-image",
+        `${process.env.REACT_APP_BACKEND_KEY}/api/generate-image`, // Fixed URL
         { prompt }
       );
+  
       setImageUrl(response.data.imageUrl);
     } catch (err) {
       console.error(err);
       alert("Failed to generate image");
     }
+  
     setIsLoading(false);
   };
+  
   const handleDownload = () => {
     if (imageUrl) {
       const link = document.createElement("a");
