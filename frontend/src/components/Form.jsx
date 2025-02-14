@@ -15,7 +15,7 @@ const Form = () => {
       console.log("Sending prompt:", prompt); // Log the prompt
   
       const response = await axios.post(
-        `${process.env.REACT_APP_BACKEND_KEY}/api/generate-image`, // Fixed URL
+        `http://localhost:5000/api/generate-image`, // Fixed URL
         { prompt }
       );
   
