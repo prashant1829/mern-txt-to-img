@@ -1,0 +1,22 @@
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #212121; /* Dark background for contrast */
+    color: white;
+    padding: 15px 20px;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+    bottom: 0;
+    left: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        padding: 10px;
+    }
+}
